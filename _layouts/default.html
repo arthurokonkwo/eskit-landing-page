@@ -1,67 +1,88 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
 {% include head.html %}
 
 <body>
-    <div class="imageWrapper">
-            <div class="headerBackground">
-                <div class="container">
-                    {% include header.html %}
-                    <div class="iphonePreview">
-
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 0 0" style="position: absolute;">
-                            <clipPath id="screenMask" clipPathUnits="objectBoundingBox" transform="scale(0.00257, 0.00119)">
-                                <path d="M6490.24,1234.36H6216.28c-2.57,0-10.55-.07-12.07-0.07a87.524,87.524,0,0,1-12-1.03,40.051,40.051,0,0,1-11.4-3.79,38.315,38.315,0,0,1-16.82-16.84,39.948,39.948,0,0,1-3.78-11.42,72.257,72.257,0,0,1-1.04-12.02c-0.06-1.83-.06-5.56-0.06-5.56V452.125h0s0.06-11.391.06-12.086a87.9,87.9,0,0,1,1.04-12.025,39.843,39.843,0,0,1,3.78-11.413,38.283,38.283,0,0,1,16.82-16.847,39.762,39.762,0,0,1,11.4-3.785,71.909,71.909,0,0,1,12-1.037c16.99-.567,36.32-0.061,34.51-0.061,5.02,0,6.5,3.439,6.63,6.962a35.611,35.611,0,0,0,1.2,8.156,21.326,21.326,0,0,0,19.18,15.592c2.28,0.192,6.78.355,6.78,0.355H6433.7s4.5-.059,6.79-0.251a21.348,21.348,0,0,0,19.18-15.591,35.582,35.582,0,0,0,1.19-8.154c0.13-3.523,1.61-6.962,6.64-6.962-1.81,0,17.52-.5,34.5.061a71.923,71.923,0,0,1,12.01,1.038,39.832,39.832,0,0,1,11.4,3.784,38.283,38.283,0,0,1,16.82,16.844,40.153,40.153,0,0,1,3.78,11.413,87.844,87.844,0,0,1,1.03,12.023c0,0.695.06,12.084,0.06,12.084h0V1183.64s0,3.72-.06,5.55a72.366,72.366,0,0,1-1.03,12.03,40.2,40.2,0,0,1-3.78,11.41,38.315,38.315,0,0,1-16.82,16.84,40.155,40.155,0,0,1-11.4,3.79,87.669,87.669,0,0,1-12.01,1.03c-1.52,0-9.5.07-12.07,0.07" transform="translate(-6159.12 -394.656)"/>
-                            </clipPath>
-                        </svg>
-
-                        <div class="videoContainer hidden">
-                            <video class="screenvideo" autoplay="autoplay" controls="controls">
-                            </video>
-                        </div>  
-                        
-                        <img class="iphoneScreen hidden" src="" alt="">
-
-                        {% include screencontent.html %}
-
+    <div class="wrapper">
+        <!-- Header -->
+        {% include header.html %}
+        <!-- Chrome extension image -->
+        <section>
+            <div class="container">
+                <img class="img-fluid object-fit-fill rounded mx-auto d-block my-2" src="https://arthurokonkwo.github.io/emojikey/assets/emoji-keyboard.jpg" alt="Emoji Keyboard">
+            </div>
+        </section>
+        <!-- Features Section -->
+        {% include features.html %}
+        <!-- <section class="py-3" id="features">
+            <div class="container px-5 my-5">
+                <div class="row gx-5 text-center">
+                    <div class="col-lg-4 mb-5 mb-lg-0 pb-lg-4">
+                        <h1><i class="bi bi-calculator"></i></h1>
+                        <h2 class="h4 fw-bolder">Floating Calculator</h2>
+                        <p>Conveniently access the calculator while <br>browsing, saving time and effort.</p>
                     </div>
-                    <div class="appInfo">
-                        <div class="appIconShadow">
-                            <svg width="0" height="0">
-                                <defs>
-                                    <clipPath id="shape120">
-                                        <path id="shape" class="cls-1" d="M6821,495.533v-4.281c0-1.2-.04-2.4-0.04-3.642a57.7,57.7,0,0,0-.68-7.882,26.144,26.144,0,0,0-2.48-7.483,25.115,25.115,0,0,0-11.04-11.044,26.118,26.118,0,0,0-7.49-2.481,47.28,47.28,0,0,0-7.88-.68c-1.2-.04-2.4-0.04-3.64-0.04h-53.5c-1.2,0-2.4.04-3.64,0.04a57.813,57.813,0,0,0-7.88.68,26.323,26.323,0,0,0-7.49,2.481,25.115,25.115,0,0,0-11.04,11.044,26.144,26.144,0,0,0-2.48,7.483,47.313,47.313,0,0,0-.68,7.882c-0.04,1.2-.04,2.4-0.04,3.642v53.5c0,1.2.04,2.4,0.04,3.641a57.7,57.7,0,0,0,.68,7.883,26.137,26.137,0,0,0,2.48,7.482,25.115,25.115,0,0,0,11.04,11.044,26.261,26.261,0,0,0,7.49,2.481,47.28,47.28,0,0,0,7.88.68c1.2,0.04,2.4.04,3.64,0.04h53.5c1.2,0,2.4-.04,3.64-0.04a57.654,57.654,0,0,0,7.88-.68,26.057,26.057,0,0,0,7.49-2.481,25.115,25.115,0,0,0,11.04-11.044,26.137,26.137,0,0,0,2.48-7.482,47.316,47.316,0,0,0,.68-7.883c0.04-1.2.04-2.4,0.04-3.641V495.533h0Z" transform="translate(-6701 -458)" filter="url(#f1)"/>
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                            <img class="appIconLarge" src="{{ site.app_icon | relative_url }}">
-                        </div>
-                        <div class="appNamePriceContainer">
-                            <h1 class="appName">
-                                {{ site.app_name }}
-                            </h1>
-                            <h2 class="appPrice">
-                                {{ site.app_price }}
-                            </h2>
-                        </div>
-                        <div class="appDescriptionContainer">
-                            <p class ="appDescription">
-                                {{ site.app_description }}
-                            </p>
-                        </div>
-                        <div class="downloadButtonsContainer">
-                            {% if site.playstore_link %}
-                                <a class="playStoreLink" href="{{site.playstore_link}}"><img class="playStore" src="assets/playstore.png"></a>
-                            {% endif %}
-                            <a class="appStoreLink" href="{{site.appstore_link}}"><img class="appStore" src="assets/appstore.png"></a>
-                        </div>
+                    <div class="col-lg-4 mb-5 mb-lg-0 pb-lg-4">
+                        <h1><i class="bi bi-bar-chart"></i></h1>
+                        <h2 class="h4 fw-bolder">Advanced Calculations</h2>
+                        <p>Perform all calculations, from simple to <br>complex, with ease and accuracy.</p>
                     </div>
-                    {% include features.html %}
-                    {% include footer.html %}
-                    {% include appstoreimages.html %}
+                    <div class="col-lg-4 mb-5 mb-lg-0 pb-lg-4">
+                        <h1><i class="bi bi-clock-history"></i></h1>
+                        <h2 class="h4 fw-bolder">History Log</h2>
+                        <p>Keep track of your calculations <br>for future reference.</p>
+                    </div>
+                    <div class="col-lg-4 mb-5 mb-lg-0 pb-lg-4">
+                        <h1><i class="bi bi-gear"></i></h1>
+                        <h2 class="h4 fw-bolder">Customization Options</h2>
+                        <p>Personalize the look and feel of the <br>calculator to your liking.</p>
+                    </div>
+                    <div class="col-lg-4 mb-5 mb-lg-0 pb-lg-4">
+                        <h1><i class="bi bi-alt"></i></h1>
+                        <h2 class="h4 fw-bolder">Keyboard Shortcuts</h2>
+                        <p>Save time with quick and easy <br>keyboard shortcuts.</p>
+                    </div>
+                    <div class="col-lg-4 mb-5 mb-lg-0 pb-lg-4">
+                        <h1><i class="bi bi-wallet"></i></h1>
+                        <h2 class="h4 fw-bolder">Financial Calculations</h2>
+                        <p>Quickly convert currency or loan tenure <br>or investment rates.</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section> -->
+        <!-- Footer -->
+        <section>
+            <div class="container text-center">
+                <div class="row align-content-center py-4">
+                    <p class="fw-normal fs-5 lead">Made by <a class="text-decoration-none" href="https://www.justiceo.com">Justice Ogbonna</a> in San Francisco</p>
+                </div>
+                <!-- Social links -->
+                <ul class="list-inline social mb-5">
+                    <li class="list-inline-item"><a class="text-reset" href="https://facebook.com/justice.ogb"><h1><i class="bi bi-facebook"></i></h1></a></li>
+                    <li class="list-inline-item"><a class="text-reset" href="https://twitter.com/justice_mode"><h1><i class="bi bi-twitter"></i></h1></a></li>
+                    <li class="list-inline-item"><a class="text-reset" href="https://instagram.com/justice.ogbonna"><h1><i class="bi bi-instagram"></i></h1></a></li>
+                    <li class="list-inline-item"><a class="text-reset" href="https://github.com/justiceo"><h1><i class="bi bi-github"></i></h1></a></li>
+                    <li class="list-inline-item"><a class="text-reset" href="mailto:hello@justiceo.com"><h1><i class="bi bi-envelope"></i></h1></a></li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <div class="container text-center">
+                <div class="row align-content-center py-4 my-5">
+                    <div>
+                        <a class="btn btn-outline-primary icon-link btn-lg px-5 py-2" href="#!">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-browser-chrome" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M16 8a8.001 8.001 0 0 1-7.022 7.94l1.902-7.098a2.995 2.995 0 0 0 .05-1.492A2.977 2.977 0 0 0 10.237 6h5.511A8 8 0 0 1 16 8ZM0 8a8 8 0 0 0 7.927 8l1.426-5.321a2.978 2.978 0 0 1-.723.255 2.979 2.979 0 0 1-1.743-.147 2.986 2.986 0 0 1-1.043-.7L.633 4.876A7.975 7.975 0 0 0 0 8Zm5.004-.167L1.108 3.936A8.003 8.003 0 0 1 15.418 5H8.066a2.979 2.979 0 0 0-1.252.243 2.987 2.987 0 0 0-1.81 2.59ZM8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/>
+                              </svg>
+                        Add to Chrome
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
 </body>
 </html>
